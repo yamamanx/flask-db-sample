@@ -187,6 +187,11 @@ Resources:
       SecurityGroupIds:
         - !Ref WebServerSecurityGroup
       IamInstanceProfile: !Ref EC2InstanceProfile
+      Tags:
+        - Key: Name
+          Value: WebServer
+        - Key: DeployGroup
+          Value: WebServer
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash

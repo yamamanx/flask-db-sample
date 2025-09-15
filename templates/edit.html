@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>メモ編集</h2>
+<form method="POST">
+    <input type="text" name="title" value="{{ memo[1] }}" required>
+    <textarea name="content" rows="5" required>{{ memo[2] }}</textarea>
+    <button type="submit" class="btn">更新</button>
+    <a href="{{ url_for('index') }}" class="btn">戻る</a>
+</form>
+{% endblock %}

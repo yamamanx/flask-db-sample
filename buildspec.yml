@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.13
+    commands:
+      - pip install -r requirements.txt
+  
+  pre_build:
+    commands:
+      - echo Pre-build phase started on `date`
+  
+  build:
+    commands:
+      - echo Build phase started on `date`
+      - python -m pytest --junitxml=test-results.xml
+  
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - '**/*'
+
+reports:
+  pytest_reports:
+    files:
+      - test-results.xml
+    file-format: JUNITXML

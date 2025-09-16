@@ -1,10 +1,12 @@
 import pytest
 from unittest.mock import patch, MagicMock
 from app import app
+import os
 
 @pytest.fixture
 def client():
     app.config['TESTING'] = True
+    app.template_folder = os.path.join(os.path.dirname(__file__), 'templates')
     with app.test_client() as client:
         yield client
 

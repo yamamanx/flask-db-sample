@@ -214,14 +214,14 @@ Resources:
           EOF
 
 Outputs:
-  WebServerPublicIP:
-    Description: Public IP of the web server
-    Value: !GetAtt WebServer.PublicIp
+  WebServerURL:
+    Description: Web server URL
+    Value: !Sub 'http://${WebServer.PublicDnsName}'
   
   DatabaseEndpoint:
     Description: RDS instance endpoint
     Value: !GetAtt Database.Endpoint.Address
 
   Secret:
-    Description: RDS master user secret
-    Value: !GetAtt Database.MasterUserSecret.SecretArn
+    Description: RDS master user secret in Secrets Manager
+    Value: !Sub 'https://console.aws.amazon.com/secretsmanager/secret?name=${Database.MasterUserSecret.SecretArn}&region=${AWS::Region}'

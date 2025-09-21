@@ -6,6 +6,7 @@ phases:
       python: 3.13
     commands:
       - pip install -r requirements.txt
+      - pip install -r requirements-dev.txt
   
   pre_build:
     commands:
@@ -14,7 +15,8 @@ phases:
   build:
     commands:
       - echo Build phase started on `date`
-      - python -m pytest --junitxml=test-results.xml
+      - python -m coverage run -m pytest --junitxml=test-results.xml
+      - python -m coverage xml -o coverage.xml
   
   post_build:
     commands:
@@ -29,3 +31,7 @@ reports:
     files:
       - test-results.xml
     file-format: JUNITXML
+  coverage_reports:
+    files:
+      - coverage.xml
+    file-format: COBERTURAXML

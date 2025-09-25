@@ -1,0 +1,10 @@
+{
+  "FunctionName": "selenium-test-function",
+  "Role": "arn:aws:iam::123456789012:role/lambda-execution-role",
+  "Code": {
+    "ImageUri": "123456789012.dkr.ecr.us-east-1.amazonaws.com/selenium-lambda-test@sha256:9aa6e59b5e7f0e3afd7f513a7c696195cbc2c1befb73074301266d594872ee58"
+  },
+  "PackageType": "Image",
+  "Timeout": 300,
+  "MemorySize": 1024
+}

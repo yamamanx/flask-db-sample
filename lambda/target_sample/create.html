@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>メモ帳アプリ</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        .memo {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .btn {
+            padding: 5px 10px;
+            margin: 5px;
+            text-decoration: none;
+            background: #007bff;
+            color: white;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>メモ帳アプリ</h1>
+
+    <h2>新規メモ作成</h2>
+    <form method="POST">
+        <input type="text" name="title" placeholder="タイトル" required>
+        <textarea name="content" rows="5" placeholder="内容" required></textarea>
+        <button type="submit" class="btn">作成</button>
+        <a href="/" class="btn">戻る</a>
+    </form>
+
+</body>
+
+</html>

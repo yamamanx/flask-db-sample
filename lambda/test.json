@@ -1,0 +1,14 @@
+{
+    "CodePipeline.job": {
+        "id": "8ee762f4-e9be-4cd3-85e9-27ad9bc9b3d0",
+        "accountId": "957114365878",
+        "data": {
+            "actionConfiguration": {
+                "configuration": {
+                    "FunctionName": "PipelineTest",
+                    "UserParameters": "http://ec2-54-204-202-196.compute-1.amazonaws.com"
+                }
+            }
+        }
+    }
+}
